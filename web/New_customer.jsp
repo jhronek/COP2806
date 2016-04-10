@@ -4,37 +4,7 @@
     Author     : jhronek
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-        <head>
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Titan Online Banking - New Customer</title>
-                <link rel="stylesheet" href="css/bootstrap.min.css">
-                
-        </head>
-
-        <body>
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="index.html">Titan Online Banking</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="Login.html">Login</a></li>
-                    </ul>
-                </div>
-            </nav>
-            
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Titan Online Banking <small>Customer Registration</small></h1>
-                     <p>Protect your money with the strength of a Titan!</p>
-                     
-                </div>
-            </div>
+<%@include file="/header.html" %>
             
             <div class="container-fluid">
                 <div class="row">
@@ -53,42 +23,42 @@
 
                     <form action="NewCustomerServlet" method="post">
                         <div class="col-sm-6">
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="firstName">First Name:</label>
                                 <input type="text" class="form-control" value="${user.firstName}" id="firstName" name="firstName">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                     <label for="lastName">Last Name:</label>
                                     <input type="text" class="form-control" value="${user.lastName}" id="lastName" name="lastName">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="phone">Phone Number:</label>
                                 <input type="tel" class="form-control" value="${user.phone}" id="phone" name="phone">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="address">Address:</label>
                                 <input type="text" class="form-control" value="${user.address}" id="address" name="address">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="city">City:</label>
                                 <input type="text" class="form-control" value="${user.city}" id="city" name="city">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="state">State:</label>
                                 <input type="text" class="form-control" value="${user.state}" id="state" name="state">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="zipcode">Zip Code:</label>
                                 <input type="text" class="form-control" value="${user.zipcode}" id="zipcode" name="zipcode">
                             </div>
 
-                            <div class="form-group-sm has-error has-feedback">
+                            <div class="form-group-sm">
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" value="${user.email}" id="email" name="email">
                             </div>
@@ -101,8 +71,4 @@
                 </div>
             </div>
             
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>    
-        </body>
-    </html>
-
+ <%@include file="/footer.jsp" %>
