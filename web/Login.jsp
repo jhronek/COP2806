@@ -31,6 +31,7 @@
 
                             <br/>
                             <button type="submit" class="btn btn-primary" name="submit">Login</button>
+                            <a class="btn btn-primary" href="password_reset.jsp">Reset Password</a>
                         </div>
                         <div class="col-sm-4">
 

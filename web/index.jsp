@@ -5,5 +5,5 @@
 --%>
 
 <%@include file="/header.html" %>
-
+<p>Please login or register to access your account</p>
 <%@include file="/footer.jsp" %>

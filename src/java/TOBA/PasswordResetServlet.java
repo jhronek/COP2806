@@ -1,5 +1,11 @@
 package TOBA;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,14 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * The LoginServlet handles login requests from the Login.html page.
- * Successful Login directs to Account_activity.html and Failure directs to
- * Login_failure.html.
+ *
  * @author jhronek
  */
-public class LoginServlet extends HttpServlet {
+public class PasswordResetServlet extends HttpServlet {
 
-/**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -27,26 +31,24 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+                // Set attribute for user and create default url string for forwarding
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        String url = "/Account_activity.jsp";
+        String password = request.getParameter("password");
         
         try {
-            // Forward to Account_activity.html if correct username and password - default jsmith@toba.com letmein for now
-            if ((request.getParameter("username").equals(user.getUsername())) && (request.getParameter("password").equals(user.getPassword()))) {
-                String url = request.getContextPath() + "/Account_activity.jsp";
-                response.sendRedirect(url);
-            }
-            else {
-                // Forward to Login_failure page if incorrect login
-                String url = request.getContextPath() + "/Login_failure.jsp";
-                response.sendRedirect(url);
-            }
+            user.setPassword(password);
+            // Forwards to url based on success or failure of form
+            getServletContext().getRequestDispatcher(url).forward(request, response);
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());            
         }
+        
+
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -76,7 +78,6 @@ public class LoginServlet extends HttpServlet {
         processRequest(request, response);
     }
 
-
     /**
      * Returns a short description of the servlet.
      *
@@ -84,8 +85,7 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "This servlet handles login requests.";
+        return "Short description";
     }// </editor-fold>
 
 }
-

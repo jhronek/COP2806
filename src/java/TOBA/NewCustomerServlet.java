@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * The New Customer Servlet handles new user registration.
@@ -44,7 +45,9 @@ public class NewCustomerServlet extends HttpServlet {
         User user = new User(firstName, lastName, phone, address, city, state, zipcode, email);
         
         // Set attribute for user and create default url string for forwarding
-        request.setAttribute("user", user);
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        session.setMaxInactiveInterval(60*60);
         String url = "/New_customer.jsp";
         try {
             // Checks if any of the fields are null or empty
@@ -54,7 +57,7 @@ public class NewCustomerServlet extends HttpServlet {
                     lastName.isEmpty() || phone.isEmpty() || address.isEmpty() ||
                     city.isEmpty() || state.isEmpty() || zipcode.isEmpty() ||
                     email.isEmpty()) {
-                
+
                 // Set url to go to New_customer.jsp
                 url = "/New_customer.jsp";
                 // HTML to add alert box in New_Customer.jsp
@@ -65,6 +68,9 @@ public class NewCustomerServlet extends HttpServlet {
             else {
                 // Success if no fields are blank
                 url = "/Success.jsp";
+                String username = lastName + zipcode;
+                user.createUsername(username);
+                user.setPassword("welcome1");
             }
             
             // Forwards to url based on success or failure of form
