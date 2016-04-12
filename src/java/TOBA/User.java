@@ -1,10 +1,12 @@
 package TOBA;
 
+import java.io.Serializable;
+
 /**
  * This class stores user information gathered from html form.
  * @author jhronek
  */
-public class User {
+public class User implements Serializable{
     // Initialize variables
     private String firstName;
     private String lastName;
@@ -14,6 +16,8 @@ public class User {
     private String state;
     private String zipcode;
     private String email;
+    private String username;
+    private String password;
     
     // Default constructor
     public User() {
@@ -111,4 +115,22 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    // Get Username
+    public String getUsername() {
+        return username;
+    }    
+
+    public void createUsername(String username) {
+        this.username = username;
+    }
+    // Set the password
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+    
 }
