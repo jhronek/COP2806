@@ -1,14 +1,28 @@
 package TOBA;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * This class stores user information gathered from html form.
  * @author jhronek
  */
+
+@Entity
+@Table(name = "User")
 public class User implements Serializable{
     // Initialize variables
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long userId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
     private String phone;
     private String address;
@@ -34,6 +48,14 @@ public class User implements Serializable{
         this.state = state;
         this.zipcode = zip;
         this.email = email;
+    }
+    
+    public Long getUserId() {
+        return userId;
+    }
+    
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
     
     // First Name getter
