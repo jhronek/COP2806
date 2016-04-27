@@ -1,0 +1,20 @@
+Tue Apr 26 21:26:34 EDT 2016 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Apr 26 21:26:34 EDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0154-5553-2a9f-ffff9c0f8cb1 
+on database directory /home/jhronek/NetBeansProjects/COP2806/TOBA/tobadb with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/usr/lib/jvm/java-8-oracle/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_92-b14
+user.dir=/usr/lib/jvm/java-8-oracle/db
+os.name=Linux
+os.arch=amd64
+os.version=4.2.0-35-generic
+derby.system.home=/home/jhronek/NetBeansProjects/COP2806/TOBA
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Apr 26 22:06:38 EDT 2016: Shutting down Derby engine
+----------------------------------------------------------------
+Tue Apr 26 22:06:38 EDT 2016:
+Shutting down instance a816c00e-0154-5553-2a9f-ffff9c0f8cb1 on database directory /home/jhronek/NetBeansProjects/COP2806/TOBA/tobadb with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+----------------------------------------------------------------
