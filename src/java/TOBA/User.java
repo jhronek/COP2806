@@ -48,6 +48,7 @@ public class User implements Serializable{
         this.state = state;
         this.zipcode = zip;
         this.email = email;
+        UserDB.insert(this);
     }
     
     public Long getUserId() {
