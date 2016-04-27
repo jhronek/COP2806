@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/tobadb.sql</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/META-INF/context.xml</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/Success.jsp</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/NewCustomerServlet.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/User.java</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/DBUtil.java</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/ConnectionPool.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/New_customer.jsp</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/WEB-INF/web.xml</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/TransactionServlet.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/LoginServlet.java</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/UserDB.java</file>
         </group>
     </open-files>
 </project-private>

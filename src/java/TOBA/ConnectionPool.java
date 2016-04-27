@@ -22,7 +22,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/Web Pages/tobadb");
+            dataSource = (DataSource) ic.lookup("jdbc:mysql://localhost:3306/tobadb");
         } catch (NamingException e) {
             System.out.println(e);
         }
