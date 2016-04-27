@@ -44,6 +44,7 @@ public class NewCustomerServlet extends HttpServlet {
         // Create a new user using all parameters
         User user = new User(firstName, lastName, phone, address, city, state, zipcode, email);
         
+        
         // Set attribute for user and create default url string for forwarding
         HttpSession session = request.getSession();
         session.setAttribute("user", user);

@@ -17,7 +17,7 @@
         <p>Click the Back button to continue.</p>
         
         <h2>Details</h2>
-        <p>Type: {pageContext.exception["class"]}</p>
-        <p>Message: {pageContext.exception.message}</p>
+        <p>Type: ${pageContext.exception["class"]}</p>
+        <p>Message: ${pageContext.exception.message}</p>
     </body>
 </html>
