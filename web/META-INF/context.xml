@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/toba">
-
-    <Resource name="jdbc/tobadb" auth="Container"
-        driverClassName="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306/tobadb"
-        username="root" password="test123!"
-        maxActive="100" maxIdle="30" maxWait="10000"
-        logAbandoned="true" removeAbandoned="true"
-        removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+<Context path="/TOBA">
+ <Resource auth="Container" 
+           driverClassName="com.mysql.jdbc.Driver" 
+           maxActive="100" 
+           maxIdle="30" 
+           maxWait="10000" 
+           name="jdbc/tobadb" 
+           global="jdbc/tobadb"
+           password="test123!" 
+           type="org.apache.commons.dbcp2.datasources.PerUserPoolPoolDataSource" 
+           url="jdbc:mysql://localhost:3306/tobadb" 
+           username="root"/>
 </Context>

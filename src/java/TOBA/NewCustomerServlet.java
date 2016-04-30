@@ -44,12 +44,11 @@ public class NewCustomerServlet extends HttpServlet {
         // Create a new user using all parameters
         User user = new User(firstName, lastName, phone, address, city, state, zipcode, email);
         
-        
         // Set attribute for user and create default url string for forwarding
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
         session.setMaxInactiveInterval(60*60);
-        String url = "/New_customer.jsp";
+        String url;
         try {
             // Checks if any of the fields are null or empty
             if (firstName == null || lastName == null || phone == null ||
@@ -66,18 +65,37 @@ public class NewCustomerServlet extends HttpServlet {
 "                            <strong>Alert!</strong>&nbsp;Please fill out all fields!\n</div>";
                 request.setAttribute("alertMessage", alertMessage);
             }
+            else if (UserDB.emailExists(user.getEmail())) {
+                // Set url to go to New_customer.jsp
+                url = "/New_customer.jsp";
+                
+                // HTML to add alert box in New_Customer.jsp
+                String alertMessage = "<div class=\"alert alert-danger\">\n" +
+                        "                   <strong>Alert!</strong>&nbsp;The email you entered is already associated with an account\n</div>";
+                request.setAttribute("alertMessage", alertMessage);
+            }
             else {
                 // Success if no fields are blank
                 url = "/Success.jsp";
-                String username = lastName + zipcode;
-                user.createUsername(username);
-                user.setPassword("welcome1");
+                
+                Account checkingAccount = new Account(user, 0.00);
+                checkingAccount.setAccountType("checking");
+                
+                
+                Account savingsAccount = new Account(user, 25.00);
+                savingsAccount.setAccountType("savings");
+                
+                
+                UserDB.insert(user);
+                AccountDB.insert(checkingAccount);
+                AccountDB.insert(savingsAccount);
             }
             
-            // Forwards to url based on success or failure of form
-            getServletContext().getRequestDispatcher(url).forward(request, response);
+                // Forwards to url based on success or failure of form
+                getServletContext().getRequestDispatcher(url).forward(request, response);
+            
         }
-        catch (Exception e) {
+        catch (ServletException | IOException e) {
             System.out.println(e.getMessage());
         }
     }
