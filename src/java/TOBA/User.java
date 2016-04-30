@@ -29,9 +29,11 @@ public class User implements Serializable{
     private String city;
     private String state;
     private String zipcode;
+    @Column(unique = true)
     private String email;
     private String username;
     private String password;
+      
     
     // Default constructor
     public User() {
@@ -48,7 +50,8 @@ public class User implements Serializable{
         this.state = state;
         this.zipcode = zip;
         this.email = email;
-        UserDB.insert(this);
+        this.createUsername(firstName + lastName + zipcode);
+        this.setPassword("welcome1");
     }
     
     public Long getUserId() {
@@ -155,5 +158,4 @@ public class User implements Serializable{
     public String getPassword() {
         return password;
     }
-    
 }

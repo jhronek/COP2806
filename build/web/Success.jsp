@@ -17,7 +17,6 @@
                             <div class="panel-heading">Registration Successful</div>
                             <div class="panel-body">
                                 Your account has been created with below information.
-                                Please check your email for username.
                                 <ul class="list-group">
                                     <li class="list-group-item">First Name:&nbsp;${user.firstName}</li>
                                     <li class="list-group-item">Last Name:&nbsp;${user.lastName}</li>

@@ -39,6 +39,7 @@ public class PasswordResetServlet extends HttpServlet {
         
         try {
             user.setPassword(password);
+            UserDB.update(user);
             // Forwards to url based on success or failure of form
             getServletContext().getRequestDispatcher(url).forward(request, response);
         }

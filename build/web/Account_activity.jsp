@@ -8,6 +8,10 @@
 <%@include file="/header.html" %>
 <c:if test="${sessionScope.user != null}">
     <p>Welcome, ${user.getFirstName()}, to your account activity page.</p>
+    <p>Your Checking Balance = ${checkingAccount.balance}</p>
+    <p>Your Savings Balance = ${savingsAccount.balance}</p>
+    <p>Recent Checking Transactions = ${checkingAccount.transactions}</p>
+    <p>Recent Savings Transactions = ${savingsAccount.transactions}</p>
 </c:if>
 
 <c:if test="${sessionScope.user == null}">
