@@ -8,6 +8,7 @@
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/User.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/PasswordResetServlet.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/Transaction.java</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/ConnectionPool.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/WEB-INF/web.xml</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/TransactionServlet.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/LoginServlet.java</file>
@@ -16,11 +17,11 @@
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/Success.jsp</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/NewCustomerServlet.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/DBUtil.java</file>
-            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/tobadb.sql</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/AccountDB.java</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/New_customer.jsp</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/web/Account_activity.jsp</file>
             <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/java/TOBA/UserDB.java</file>
+            <file>file:/home/jhronek/NetBeansProjects/COP2806/TOBA/src/conf/MANIFEST.MF</file>
         </group>
     </open-files>
 </project-private>

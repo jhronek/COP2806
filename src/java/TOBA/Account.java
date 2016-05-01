@@ -5,6 +5,7 @@
  */
 package TOBA;
 
+import static TOBA.User_.userId;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.persistence.CascadeType;
@@ -16,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.metamodel.SingularAttribute;
 
 /**
  *
@@ -30,6 +32,7 @@ public class Account implements Serializable{
     private double balance;
     public enum AccountType {CHECKING, SAVINGS}
     AccountType accountType = AccountType.CHECKING;
+    private long userId;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private User user;
@@ -41,7 +44,7 @@ public class Account implements Serializable{
     }  
     
     Account(User user, double balance) {
-        this.user = user;
+        this.userId = user.getUserId();
         this.setBalance(balance);
     }
     
@@ -78,6 +81,10 @@ public class Account implements Serializable{
         String transDebit = "Debit: -" + debit;
        // this.transactions.append(transDebit);
         this.balance += debit;
+    }
+    
+    public long getUserId() {
+        return userId;
     }
     
     

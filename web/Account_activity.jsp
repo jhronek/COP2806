@@ -4,12 +4,14 @@
     Author     : jhronek
 --%>
 
+
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="/header.html" %>
 <c:if test="${sessionScope.user != null}">
     <p>Welcome, ${user.getFirstName()}, to your account activity page.</p>
-    <p>Your Checking Balance = ${checkingAccount.balance}</p>
-    <p>Your Savings Balance = ${savingsAccount.balance}</p>
+    <p>Your Checking Balance = ${(TOBA.AccountDB.selectAccountBalance(user, AccountType.CHECKING))}</p>
+    <p>Your Savings Balance = ${(TOBA.AccountDB.selectAccountBalance(user, AccountType.SAVINGS))}</p>
     <p>Recent Checking Transactions = ${checkingAccount.transactions}</p>
     <p>Recent Savings Transactions = ${savingsAccount.transactions}</p>
 </c:if>
