@@ -5,6 +5,7 @@
  */
 package TOBA;
 
+import TOBA.Account.AccountType;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -61,26 +62,48 @@ public class AccountDB {
         }
     }
     
-    public static List<Account> selectAccount(Long userId) {
+    public static Account selectAccount(Long userid, AccountType type) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
-        String qString = "SELECT u from Account u " +
-                "WHERE u.userId = :userId;";
+        String qString = "SELECT * from Account u " +
+                "WHERE u.userId = :userId" +
+                "AND u.accountType = :accountType;";
         TypedQuery<Account> q = em.createQuery(qString, Account.class);
-        q.setParameter("userId", userId);
         
-        List<Account> results;
+        q.setParameter("userId", userid);
+        q.setParameter("accountType", type);
+        
+        Account account = null;
         try {
-            results = q.getResultList();
-            if(results == null || !results.isEmpty()) {
-                results = null;
-            }
+            account = q.getSingleResult();
         } catch (NoResultException e) {
-            return null;
+            System.out.println(e);
         } finally {
             em.close();
         }
         
-        return results;
+        return account;
+    }
+    
+     public static double selectAccountBalance(User user, AccountType type) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT u.balance from Account u " +
+                "WHERE u.userId = :userId" +
+                "AND u.accountType = :accountType;";
+        TypedQuery<Account> q = em.createQuery(qString, Account.class);
+        
+        q.setParameter("userId", user.getUserId());
+        q.setParameter("accountType", type);
+        
+        double balance = 0.0;
+        try {
+            balance = q.getSingleResult().getBalance();
+        } catch (NoResultException e) {
+            System.out.println(e);
+        } finally {
+            em.close();
+        }
+        
+        return balance;
     }
     
 
